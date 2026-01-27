@@ -40,7 +40,7 @@ export default function Home() {
             absoluta. Implementación de despliegues automáticos (OTA) en redes
             LAN.
           </p>
-          <span className="text-sm font-mono bg-gray-100 p-1">
+          <span className="text-sm font-mono p-1">
             #DevOps #Nginx #SysAdmin
           </span>
         </div>
