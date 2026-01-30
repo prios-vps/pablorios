@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -17,11 +17,31 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  /* background: var(--background);
+  color: var(--foreground); */
   /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: var(--font-ncm-08-serif);
+}
+
+.ncm10serif {
   font-family: var(--font-ncm-10-serif);
+}
+
+.ncm08serif {
+  font-family: var(--font-ncm-08-serif);
+}
+
+.ncm10sans {
+  font-family: var(--font-ncm-10-sans);
+}
+
+.ncm08sans {
+  font-family: var(--font-ncm-08-sans);
+}
+
+.ncm10mono {
+  font-family: var(--font-ncm-10-mono);
 }

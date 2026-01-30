@@ -5,8 +5,8 @@ export default function Home() {
     <main className="max-w-4xl mx-auto p-8">
       <header className="flex justify-between items-center mb-12 gap-5">
         <div id="hero">
-          <h1 className="text-4xl font-bold">Pablo Ariel Ríos Pérez</h1>
-          <h2 className="text-xl text-gray-600 mt-2">
+          <h1 className="text-4xl ncm10serif font-bold not-italic">Pablo Ariel Ríos Pérez</h1>
+          <h2 className="text-xl text-gray-800 dark:text-gray-400 mt-2 ncm10serif font-medium italic">
             Software Engineer & DevOps | Rigor lógico aplicado al desarrollo de
             sistemas.
           </h2>

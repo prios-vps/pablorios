@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { ncm10Serif } from "@/styles/ts/fonts";
+import {
+  ncm10Serif,
+  ncm08Serif,
+  ncm10Sans,
+  ncm08Sans,
+  ncm10Mono
+} from "@/styles/ts/fonts";
 import "../styles/css/globals.css";
 
 export const metadata: Metadata = {
@@ -17,9 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
-        className={`${ncm10Serif.className} antialiased`}
+        className={`${ncm10Serif.variable} ${ncm08Serif.variable} ${ncm10Sans.variable} ${ncm08Sans.variable} ${ncm10Mono.variable} antialiased bg-gray-300 text-gray-900 dark:bg-gray-800 dark:text-gray-200`}
       >
         {children}
       </body>

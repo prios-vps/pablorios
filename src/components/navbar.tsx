@@ -21,7 +21,7 @@ export default function NavBar () {
             <li key={link.name}>
               <Link 
                 href={link.href}
-                className={`whitespace-nowrap ${isActive ? "text-blue-600 font-bold" : "text-gray-600"}`}
+                className={`whitespace-nowrap ${isActive ? "text-gray-900 dark:text-gray-200 font-bold" : "text-gray-600 dark:text-gray-400"}`}
               >
                 {link.name}
               </Link>
