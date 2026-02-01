@@ -16,7 +16,6 @@ export default function Projects() {
           </span>
         </div>
       ))}
-
     </section>
   );
 }
