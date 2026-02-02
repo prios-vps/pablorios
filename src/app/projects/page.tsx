@@ -11,9 +11,9 @@ export default function Projects() {
           <p className="mt-2">
             {project.description}
           </p>
-          <span className="text-sm font-mono p-1">
+          {/* <span className="text-sm font-mono p-1">
             {project.tags.join(' ')}
-          </span>
+          </span> */}
         </div>
       ))}
     </section>
