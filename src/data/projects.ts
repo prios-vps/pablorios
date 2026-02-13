@@ -1,4 +1,5 @@
 export interface ProjectDetails {
+  id: number
   title: string
   skills: string[]
   problem: string
@@ -29,7 +30,64 @@ export const projects: Project[] = [
     url: {
       details: 'restaurant',
       demo: 'https://restaurant.pablorios.cl'
-    }
+    },
+    details: [
+        {
+            id: 1,
+            title: "Primer problema",
+            skills: [
+                "Competencia 1",
+                "Competencia 2",
+                "Competencia 3"
+            ],
+            problem: "Problema 1",
+            solution: "Solución 1",
+            impact: "Impacto 1"
+        },
+        {
+            id: 2,
+            title: "Segundo problema",
+            skills: [
+                "Competencia 1",
+                "Competencia 3",
+                "Competencia 5"
+            ],
+            problem: "Problema 2",
+            solution: "Solución 2",
+            impact: "Impacto 2"
+        },
+        {
+            id: 3,
+            title: "Tercer problema",
+            skills: [
+                "Competencia 3"
+            ],
+            problem: "Problema 3",
+            solution: "Solución 3"
+        },
+        {
+            id: 4,
+            title: "Cuarto problema",
+            skills: [
+                "Competencia 2",
+                "Competencia 4",
+                "Competencia 6"
+            ],
+            problem: "Problema 4",
+            solution: "Solución 4",
+            impact: "Impacto 4"
+        },
+        {
+            id: 5,
+            title: "Quinto problema",
+            skills: [
+                "Competencia 5",
+                "Competencia 6"
+            ],
+            problem: "Problema 5",
+            solution: "Solución 5"
+        },
+    ]
   },
   {
     id: 2,
@@ -52,3 +110,4 @@ export const projects: Project[] = [
     }
   }
 ];
+
