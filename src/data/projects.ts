@@ -34,7 +34,7 @@ export const projects: Project[] = [
     details: [
         {
             id: 1,
-            title: "Primer problema",
+            title: "Primer problema 1",
             skills: [
                 "Competencia 1",
                 "Competencia 2",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
         },
         {
             id: 2,
-            title: "Segundo problema",
+            title: "Segundo problema 1",
             skills: [
                 "Competencia 1",
                 "Competencia 3",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
         },
         {
             id: 3,
-            title: "Tercer problema",
+            title: "Tercer problema 1",
             skills: [
                 "Competencia 3"
             ],
@@ -67,7 +67,7 @@ export const projects: Project[] = [
         },
         {
             id: 4,
-            title: "Cuarto problema",
+            title: "Cuarto problema 1",
             skills: [
                 "Competencia 2",
                 "Competencia 4",
@@ -79,7 +79,7 @@ export const projects: Project[] = [
         },
         {
             id: 5,
-            title: "Quinto problema",
+            title: "Quinto problema 1",
             skills: [
                 "Competencia 5",
                 "Competencia 6"
@@ -97,7 +97,64 @@ export const projects: Project[] = [
     url: {
       details: 'escaner',
       download: 'https://descargas.pablorios.cl/Escaner.zip'
-    }
+    },
+    details: [
+        {
+            id: 1,
+            title: "Primer problema 2",
+            skills: [
+                "Competencia 1",
+                "Competencia 2",
+                "Competencia 3"
+            ],
+            problem: "Problema 1",
+            solution: "Solución 1",
+            impact: "Impacto 1"
+        },
+        {
+            id: 2,
+            title: "Segundo problema 2",
+            skills: [
+                "Competencia 1",
+                "Competencia 3",
+                "Competencia 5"
+            ],
+            problem: "Problema 2",
+            solution: "Solución 2",
+            impact: "Impacto 2"
+        },
+        {
+            id: 3,
+            title: "Tercer problema 2",
+            skills: [
+                "Competencia 3"
+            ],
+            problem: "Problema 3",
+            solution: "Solución 3"
+        },
+        {
+            id: 4,
+            title: "Cuarto problema 2",
+            skills: [
+                "Competencia 2",
+                "Competencia 4",
+                "Competencia 6"
+            ],
+            problem: "Problema 4",
+            solution: "Solución 4",
+            impact: "Impacto 4"
+        },
+        {
+            id: 5,
+            title: "Quinto problema 2",
+            skills: [
+                "Competencia 5",
+                "Competencia 6"
+            ],
+            problem: "Problema 5",
+            solution: "Solución 5"
+        },
+    ]
   },
   {
     id: 3,
