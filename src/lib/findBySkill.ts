@@ -1,3 +1,5 @@
+import { Project } from '@/data/projects';
+
 export function findBySkill(
     projects: Project[],
     skill: string
