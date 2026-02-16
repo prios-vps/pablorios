@@ -6,11 +6,12 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Proyectos", href: "/projects" },
+  { name: "Competencias", href: "/skills" },
   { name: "Sobre mí", href: "/about" },
 ];
 
 export default function NavBar () {
-    const pathname = usePathname();
+  const pathname = usePathname();
 
   return (
     <nav className="flex justify-end p-4">
