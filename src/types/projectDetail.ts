@@ -1,5 +1,6 @@
 export default interface ProjectDetail {
   id: number
+  idProject: number
   title: string
   skills: string[]
   problem: string

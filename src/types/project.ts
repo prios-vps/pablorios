@@ -1,5 +1,3 @@
-import ProjectDetail from '@/types/projectDetail';
-
 export default interface Project {
   id: number
   title: string
@@ -11,6 +9,5 @@ export default interface Project {
     download?: string
     src?: string
   }
-  details?: ProjectDetail[]
 }
 
