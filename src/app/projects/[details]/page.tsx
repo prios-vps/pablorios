@@ -16,6 +16,9 @@ export function generateStaticParams() {
 export default function ProjectDetailPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.url?.details === params.details);
 
+  console.log(`projects: ${projects}`)
+  console.log(`params: ${params}`)
+
   if (!project) return notFound();
 
   // Filtrar detalles relacionados a este proyecto
