@@ -13,16 +13,15 @@ export function generateStaticParams() {
     .map((p) => ({ details: p.url!.details! }));
 }
 
-export default function ProjectDetailPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.url?.details === params.details);
+export default async function ProjectDetailPage({ params }: ProjectPageProps) {
+  const { details } = await params;
 
-  console.log(`projects: ${projects}`)
-  console.log(`params: ${params}`)
+  const project = projects.find((p) => p.url?.details === details);
 
   if (!project) return notFound();
 
   // Filtrar detalles relacionados a este proyecto
-  const details = projectDetails.filter((d) => d.idProject === project.id);
+  const detailList = projectDetails.filter((d) => d.idProject === project.id);
 
   return (
     <main className="max-w-4xl mx-auto p-6">
@@ -31,7 +30,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       <p className="mb-6">{project.description}</p>
 
       <section className="space-y-6">
-        {details.map((detail) => (
+        {detailList.map((detail) => (
           <div key={detail.id} className="border-l-4 border-blue-500 pl-4">
             <h3 className="font-semibold text-lg">{detail.title}</h3>
             <p className="mt-1"><strong>Problema:</strong> {detail.problem}</p>
