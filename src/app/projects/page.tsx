@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import { projects } from '@/data/projects';
+import { projects } from '@/data/ts/projects';
 
-export default function Projects() {
+export default function ProjectIndex() {
   return (
-    <main className="max-w-4xl mx-auto p-6">
+    <>
       <h1 className="text-3xl font-bold mb-6">Proyectos</h1>
       <ul className="space-y-6">
         {projects.map((project) => (
@@ -23,7 +23,7 @@ export default function Projects() {
           </li>
         ))}
       </ul>
-    </main>
+    </>
   );
 }
 

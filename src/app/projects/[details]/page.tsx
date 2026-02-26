@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { projects } from '@/data/projects';
-import { projectDetails } from '@/data/projectDetails';
+
+import { projects } from '@/data/ts/projects';
+import { projectDetails } from '@/data/ts/projectDetails';
 
 interface ProjectPageProps {
   params: { details: string };
@@ -24,7 +26,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const detailList = projectDetails.filter((d) => d.idProject === project.id);
 
   return (
-    <main className="max-w-4xl mx-auto p-6">
+    <>
+      <Link href="/projects" className="ncm8serif pb-6">
+        &larr; Volver al listado de proyectos
+      </Link>
       <h1 className="text-3xl font-bold mb-2">{project.title}</h1>
       <h2 className="text-xl text-gray-700 mb-4">{project.subtitle}</h2>
       <p className="mb-6">{project.description}</p>
@@ -39,7 +44,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </div>
         ))}
       </section>
-    </main>
+    </>
   );
 }
 
