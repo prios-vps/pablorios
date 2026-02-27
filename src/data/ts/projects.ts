@@ -17,8 +17,8 @@ export const projects: Project[] = [
     subtitle: 'Escaner de hardware, impresoras conectadas y registro de datos en Excel',
     description: 'Aplicación gráfica probada en entornos Windows, escrita en Python + Tkinter, con el fin de capturar información acerca del hardware del equipo. Usa Pandas para procesar los datos y convertirlos a xlsx gracias a openpyxl. También es capaz de escanear las impresoras conectadas al equipo por red.',
     url: {
-      details: 'escaner',
-      download: 'https://descargas.pablorios.cl/Escaner.zip'
+      details: 'scanner',
+      download: 'https://descargas.pablorios.cl/Scanner.zip'
     },
   },
   {
