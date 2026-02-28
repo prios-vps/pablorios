@@ -1,4 +1,3 @@
-import type { PluggableList } from 'unified';
 import rehypePrettyCode from 'rehype-pretty-code';
 import remarkGfm from 'remark-gfm';
 
@@ -9,12 +8,6 @@ export const rehypeOptions = {
   },
   keepBackground: true,
 };
-
-export const remarkPlugins: PluggableList = [remarkGfm];
-
-export const rehypePlugins: PluggableList = [
-  [rehypePrettyCode, rehypeOptions],
-];
 
 export const mdxOptions = {
   remarkPlugins: [remarkGfm],

@@ -1,17 +1,6 @@
 import type { NextConfig } from "next";
 import createMDX from '@next/mdx';
-import { mdxOptions } from './src/lib/mdxOptions';
-//import rehypePrettyCode, { type Options } from "rehype-pretty-code";
-
-
-/* @type {import('rehype-pretty-code').Options} */
-/*const rehypeOptions = {
-  theme: {
-    dark: "houston",
-    light: "catppuccin-latte",
-  },
-  keepBackground: true,
-};*/
+import { rehypeOptions } from '@/lib/mdxOptions';
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
@@ -24,15 +13,11 @@ const nextConfig: NextConfig = {
   },
 };
 
-/*const withMDX = createMDX({
+const withMDX = createMDX({
   options: {
     remarkPlugins: ['remark-gfm'],
     rehypePlugins: [['rehype-pretty-code', rehypeOptions]],
   },
-});*/
-
-const withMDX = createMDX({
-  options: mdxOptions as any,
 });
 
 export default withMDX(nextConfig);

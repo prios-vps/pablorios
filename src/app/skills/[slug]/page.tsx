@@ -1,7 +1,9 @@
 // Importaciones de node_modules
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { compileMDX } from 'next-mdx-remote/rsc';
+import rehypePrettyCode from 'rehype-pretty-code';
+import remarkGfm from 'remark-gfm';
 
 // Importaciones internas del proyecto
 // Tipos
@@ -11,6 +13,8 @@ import { skills } from '@/data/ts/skills';
 // Detalles de @/data/mdx usando una función que
 // los obtiene de todas las carpetas de proyectos
 import { getAllProjectDetails } from '@/lib/projectDetails';
+// Configuraciones globales de compilación de MDX
+import { rehypeOptions } from '@/lib/mdxOptions';
 
 interface SkillPageProps {
   params: { slug: string };
@@ -56,11 +60,23 @@ export default async function ProjectDetailPage({ params }: SkillPageProps) {
       )}
 
       <div className="space-y-12">
-      {filtered.map((detail, index) => (
+      {filtered.map(async (detail, index) => {
+        const { content } = await compileMDX({
+          source: detail.content,
+          options: {
+            mdxOptions: {
+              remarkPlugins: [remarkGfm],
+              rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
+            }
+          },
+        });
+
+        return (
         <article key={index} className="prose prose-invert max-w-none">
-          <MDXRemote source={detail.content} />
+          {content}
         </article>
-      ))}
+        );
+      })}
       </div>
     </>
   );
