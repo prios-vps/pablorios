@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { MDXComponents } from 'mdx/types'
 
-const components: MDXComponents = {
+export const components: MDXComponents = {
 	// Headings
 	h1: (props) => (
 		<h1
@@ -75,8 +75,7 @@ const components: MDXComponents = {
 		/>
 	),
 
-	// Pre (rehype-pretty-code lo reemplazará)
-	pre: (props) => (
+  pre: (props) => (
 		<pre
 			className="my-6 overflow-x-auto rounded-lg p-4 text-sm"
 			{...props}

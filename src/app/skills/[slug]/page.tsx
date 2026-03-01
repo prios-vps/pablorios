@@ -14,7 +14,9 @@ import { skills } from '@/data/ts/skills';
 // los obtiene de todas las carpetas de proyectos
 import { getAllProjectDetails } from '@/lib/projectDetails';
 // Configuraciones globales de compilación de MDX
-import { rehypeOptions } from '@/lib/mdxOptions';
+import { mdxOptions } from '@/lib/mdxOptions';
+// Definición de componentes
+import { components } from '@/components/mdx-components';
 
 interface SkillPageProps {
   params: { slug: string };
@@ -47,6 +49,19 @@ export default async function ProjectDetailPage({ params }: SkillPageProps) {
       return a.problemId - b.problemId;
     });
 
+  const renderedContent = await Promise.all(
+    filtered.map(async (detail) => {
+      const { content } = await compileMDX({
+        source: detail.content,
+        components, // 3. Pasa los componentes aquí
+        options: {
+          mdxOptions: mdxOptions
+        },
+      });
+      return content;
+    })
+  );
+
   return (
     <>
       <Link href="/skills" className="ncm08serif pb-6">
@@ -60,23 +75,11 @@ export default async function ProjectDetailPage({ params }: SkillPageProps) {
       )}
 
       <div className="space-y-12">
-      {filtered.map(async (detail, index) => {
-        const { content } = await compileMDX({
-          source: detail.content,
-          options: {
-            mdxOptions: {
-              remarkPlugins: [remarkGfm],
-              rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
-            }
-          },
-        });
-
-        return (
-        <article key={index} className="prose prose-invert max-w-none">
-          {content}
-        </article>
-        );
-      })}
+        {renderedContent.map((content, index) => (
+          <article key={index} className="prose prose-invert max-w-none">
+            {content}
+          </article>
+        ))}
       </div>
     </>
   );

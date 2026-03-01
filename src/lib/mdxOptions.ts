@@ -1,7 +1,7 @@
 import rehypePrettyCode from 'rehype-pretty-code';
 import remarkGfm from 'remark-gfm';
 
-export const rehypeOptions = {
+const rehypeOptions: Object = {
   theme: {
     dark: 'houston',
     light: 'catppuccin-latte',
@@ -9,7 +9,7 @@ export const rehypeOptions = {
   keepBackground: true,
 };
 
-export const mdxOptions = {
+export const mdxOptions: Object = {
   remarkPlugins: [remarkGfm],
   rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
 };

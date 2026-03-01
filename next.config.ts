@@ -1,6 +1,4 @@
 import type { NextConfig } from "next";
-import createMDX from '@next/mdx';
-import { rehypeOptions } from '@/lib/mdxOptions';
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
@@ -13,12 +11,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-const withMDX = createMDX({
-  options: {
-    remarkPlugins: ['remark-gfm'],
-    rehypePlugins: [['rehype-pretty-code', rehypeOptions]],
-  },
-});
-
-export default withMDX(nextConfig);
+export default nextConfig;
 
