@@ -2,8 +2,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import rehypePrettyCode from 'rehype-pretty-code';
-import remarkGfm from 'remark-gfm';
 
 // Importaciones internas del proyecto
 // Tipos
@@ -27,7 +25,7 @@ export function generateStaticParams() {
   return skills.map((s: Skill) => ({ slug: s.slug! }));
 }
 
-export default async function ProjectDetailPage({ params }: SkillPageProps) {
+export default async function SkillDetailPage({ params }: SkillPageProps) {
   const { slug } = await params;
 
   // Encuentra la competencia por el slug para mostrarla
@@ -53,10 +51,8 @@ export default async function ProjectDetailPage({ params }: SkillPageProps) {
     filtered.map(async (detail) => {
       const { content } = await compileMDX({
         source: detail.content,
-        components, // 3. Pasa los componentes aquí
-        options: {
-          mdxOptions: mdxOptions
-        },
+        components,
+        options: { mdxOptions },
       });
       return content;
     })

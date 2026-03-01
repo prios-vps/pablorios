@@ -1,8 +1,19 @@
+// Importaciones de node_modules
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { compileMDX } from 'next-mdx-remote/rsc';
 
+// Importaciones internas del proyecto
+// Tipos
+import Project from '@/types/project';
+// Datos (TS)
 import { projects } from '@/data/ts/projects';
-import { projectDetails } from '@/data/ts/projectDetails';
+// Datos (MDX, obtenidos con función)
+import { getAllProjectDetails } from '@/lib/projectDetails';
+// Configuraciones globales de compilador de MDX
+import { mdxOptions } from '@/lib/mdxOptions';
+// Definición de componentes
+import { components } from '@/components/mdx-components';
 
 interface ProjectPageProps {
   params: { details: string };
@@ -18,12 +29,32 @@ export function generateStaticParams() {
 export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const { details } = await params;
 
-  const project = projects.find((p) => p.url?.details === details);
+  const project = projects.find((p: Project) => p.url?.details === details);
 
   if (!project) return notFound();
 
+  const allDetails = getAllProjectDetails();
+
   // Filtrar detalles relacionados a este proyecto
-  const detailList = projectDetails.filter((d) => d.idProject === project.id);
+  //const detailList = projectDetails.filter((d) => d.idProject === project.id);
+
+  // Filtrar por proyecto
+  const filtered = allDetails
+    .filter((detail) => detail.projectId === project.id)
+    .sort((a, b) => {
+      return a.problemId - b.problemId;
+    });
+
+  const renderedContent = await Promise.all(
+    filtered.map(async (detail) => {
+      const { content } = await compileMDX({
+        source: detail.content,
+        components,
+        options: { mdxOptions },
+      });
+      return content
+    })
+  );
 
   return (
     <>
@@ -35,13 +66,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       <p className="mb-6">{project.description}</p>
 
       <section className="space-y-6">
-        {detailList.map((detail) => (
-          <div key={detail.id} className="border-l-4 border-blue-500 pl-4">
-            <h3 className="font-semibold text-lg">{detail.title}</h3>
-            <p className="mt-1"><strong>Problema:</strong> {detail.problem}</p>
-            <p className="mt-1"><strong>Solución:</strong> {detail.solution}</p>
-            {detail.impact && <p className="mt-1"><strong>Impacto:</strong> {detail.impact}</p>}
-          </div>
+        {renderedContent.map((content, index) => (
+          <article key={index} className="prose prose-invert max-w-none">
+            { content }
+          </article>
         ))}
       </section>
     </>
