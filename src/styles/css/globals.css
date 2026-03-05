@@ -1,8 +1,8 @@
 @import "tailwindcss";
-
+/*
 * {
   outline: 1px solid red;
-}
+}*/
 
 body {
 	font-family: var(--font-ncm-08-serif);
