@@ -8,7 +8,9 @@ export const projects: Project[] = [
     description: 'Sistema de toma de pedidos para garzones con gestión de salones, mesas y comandas, búsqueda de productos, cálculo automático de totales y envío de pedidos a cocina mediante impresión automática de tickets, integrado a base de datos legacy existente.',
     url: {
       details: 'restaurant',
-      demo: 'https://restaurant.pablorios.cl'
+      demo: 'https://restaurant.pablorios.cl',
+      download: 'https://dl.pablorios.cl/test.zip',
+      github: 'https://github.com/PabloRiosP/Google2OutlookCSVFix'
     },
   },
   {
@@ -26,10 +28,6 @@ export const projects: Project[] = [
     title: 'Automatizador de informes en Excel',
     subtitle: 'Lectura de informes provenientes de un sistema de ventas basado en IBM Informix',
     description: 'Recibe de entrada archivos en texto plano, en algunos informes son archivos con columnas separadas por pipes, y en otros informes de ancho de columna fijos destinados a impresoras de patrón de puntos. Procesa los datos usando Pandas y genera los informes terminados en formato xlsx.',
-    url: {
-      details: 'excel',
-      download: 'https://descargas.pablorios.cl/AutomatizadorExcel.zip'
-    }
   }
 ];
 

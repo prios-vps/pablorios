@@ -1,17 +1,22 @@
+// 2026 © Pablo Ríos
+// Licencia MIT
+// Declaración de componentes para MDX
+
 import Link from 'next/link';
 import type { MDXComponents } from 'mdx/types'
 
 export const components: MDXComponents = {
-	// Headings
+	// Se supone que h1 y h2 no deberían ser usados por lo que los marco en rojo y azul
+  // para modificarlos adecuadamente en los MDX correspondientes.
 	h1: (props) => (
 		<h1
-			className="mt-10 mb-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100"
+			className="text-red-400"
 			{...props}
 		/>
 	),
 	h2: (props) => (
 		<h2
-			className="mt-8 mb-3 text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100"
+			className="text-blue-400"
 			{...props}
 		/>
 	),
@@ -70,7 +75,7 @@ export const components: MDXComponents = {
 	// Inline code
 	code: (props) => (
 		<code
-      className="rounded px-1.5 py-0.5 text-[1rem] ncm10mono"
+      className="rounded p-4 text-[1rem] ncm10mono"
 			{...props}
 		/>
 	),

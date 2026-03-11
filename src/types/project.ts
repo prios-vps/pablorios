@@ -7,7 +7,7 @@ export default interface Project {
     details?: string
     demo?: string
     download?: string
-    src?: string
+    github?: string
   }
 }
 

@@ -1,5 +1,11 @@
+// 2026 @ Pablo Ríos
+// Licencia MIT
+// Layout principal del portafolio
+
 // Importaciones desde node
-import type { Metadata } from "next";
+// Tipos
+import type { ReactNode } from 'react';
+import type { Metadata } from 'next';
 
 // Fuentes
 /*import {
@@ -11,11 +17,11 @@ import type { Metadata } from "next";
 } from "@/styles/ts/fonts";
  */
 // Componentes
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Header from '@/components/main/header';
+import Footer from '@/components/main/footer';
 
 // Estilos CSS
-import "../styles/css/globals.css";
+import '@/styles/css/globals.css';
 
 // Metadatos <meta>
 export const metadata: Metadata = {
@@ -28,12 +34,12 @@ export const metadata: Metadata = {
   },
 };
 
+interface Props {
+  children: ReactNode;
+}
+
 // Base HTML del portafolio.
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="es">
       {/*<body

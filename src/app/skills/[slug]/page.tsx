@@ -4,6 +4,10 @@ import { notFound } from 'next/navigation';
 import { compileMDX } from 'next-mdx-remote/rsc';
 
 // Importaciones internas del proyecto
+import T2 from '@/components/struct/t2';
+import Description from '@/components/struct/description';
+// Definición de componentes
+import { components } from '@/components/struct/mdx-components';
 // Tipos
 import Skill from '@/types/skill';
 // Datos
@@ -13,8 +17,6 @@ import { skills } from '@/data/ts/skills';
 import { getAllProjectDetails } from '@/lib/projectDetails';
 // Configuraciones globales de compilación de MDX
 import { mdxOptions } from '@/lib/mdxOptions';
-// Definición de componentes
-import { components } from '@/components/mdx-components';
 
 interface SkillPageProps {
   params: { slug: string };
@@ -64,16 +66,16 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
         &larr; Volver a listado de competencias
       </Link>
 
-      <h1 className="text-3xl font-bold mb-2">{skill.name}</h1>
+      <T2>{ skill.name }</T2>
 
       {skill.description && (
-        <h2 className="text-xl text-gray-300 mb-4">{skill.description}</h2>
+        <Description>{ skill.description }</Description>
       )}
 
       <div className="space-y-12">
         {renderedContent.map((content, index) => (
           <article key={index} className="prose prose-invert max-w-none">
-            {content}
+            { content }
           </article>
         ))}
       </div>

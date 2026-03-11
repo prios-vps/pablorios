@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 // Componentes internos
-import T1 from '@/components/t1';
+import T2 from '@/components/struct/t2';
 
 // Información
 import { skills } from '@/data/ts/skills';
@@ -10,7 +10,7 @@ import { skills } from '@/data/ts/skills';
 export default function SkillIndex() {
   return (
     <>
-      <T1>Competencias</T1>
+      <T2>Competencias</T2>
       <ul className="flex flex-col justify-center gap-3 flex-wrap md:flex-row">
         {skills.map((skill) => (
           <li key={skill.id} className="flex m-0 p-0">
