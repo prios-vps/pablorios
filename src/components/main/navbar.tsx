@@ -1,12 +1,24 @@
+// © 2026 Pablo Ríos
+// Licencia MIT
+// Barra de navegación
+
+// Este componente se ejecuta a nivel de cliente
+// debido a la actualización del estilo 
 'use client';
 
+// Elementos de Node
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+// Elementos internos
+import { skills } from '@/data/ts/skills';
 
 const navLinks = [
   { name: 'Inicio', href: '/' },
   { name: 'Proyectos', href: '/projects' },
-  { name: 'Competencias', href: '/skills' },
+  ...(skills.length > 0
+    ? [{ name: 'Competencias', href: '/skills' }]
+    : []),
   { name: 'Sobre mí', href: '/about' },
 ];
 

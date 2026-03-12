@@ -1,21 +1,20 @@
 ---
 
 projectId: 1
-skillIds: [ 1, 2, 3 ]
+skillIds: [ ]
 problemId: 2
 
 ---
 
-# Problema de prueba 2
+### Estructura del proyecto
 
-Otro problema de prueba.
+#### Arquitectura del sistema del cliente
 
-```javascript
-function aaa (entrada = "relleno") {
-    console.log(entrada);
-}
+El sistema de mi cliente es un programa desarrollado en Visual Basic 5 conectado a una base de datos en MySQL, la cual en varias de sus tablas no contaba con alguna columna destinada a la clave primaria, y la unicidad de los datos depende principalmente del contexto en el que se usa y de su relación con otras tablas.
 
-aaa("patata");
-```
+Dado que es un sistema en producción en varios locales no era razonable solicitar cambios en la estructura de la base de datos, por lo que me vi en la necesidad de adaptar mi marco de trabajo a la realidad del sistema al que debía conectarse.
+
+#### Primer intento: Aplicación Android usando Expo
+
 
 
