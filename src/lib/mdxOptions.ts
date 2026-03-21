@@ -13,4 +13,3 @@ export const mdxOptions: Object = {
   remarkPlugins: [remarkGfm],
   rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
 };
-

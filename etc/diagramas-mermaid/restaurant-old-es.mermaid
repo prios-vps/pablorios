@@ -1,0 +1,14 @@
+architecture-beta
+    group system(internet)[Sistema Restaurant Version Antigua]
+
+    service db(database)[Base de Datos]
+    service vb5(server)[Sistema Cliente VB5]
+    service api(server)[API REST] in system
+    service socket(server)[Servidor Web Socket] in system
+    service frontend(internet)[Aplicacion Movil] in system
+
+    db:L -- R:vb5
+    db:T -- L:api
+    api:R -- T:frontend
+    db:R -- L:socket
+    socket:R -- L:frontend

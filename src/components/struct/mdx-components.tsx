@@ -5,6 +5,8 @@
 import Link from 'next/link';
 import type { MDXComponents } from 'mdx/types'
 
+import Diagram from '@/components/project/diagram/diagram';
+
 export const components: MDXComponents = {
 	// Se supone que h1 y h2 no deberían ser usados por lo que los marco en rojo y azul
   // para modificarlos adecuadamente en los MDX correspondientes.
@@ -133,6 +135,7 @@ export const components: MDXComponents = {
 			{...props}
 		/>
 	),
+  Diagram,
 }
 
 export function useMDXComponents(): MDXComponents {

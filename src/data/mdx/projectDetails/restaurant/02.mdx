@@ -14,9 +14,10 @@ El sistema de mi cliente es un programa desarrollado en Visual Basic 5 conectado
 
 Dado que es un sistema en producción en varios locales no era razonable solicitar cambios en la estructura de la base de datos, por lo que me vi en la necesidad de adaptar mi marco de trabajo a la realidad del sistema al que debía conectarse.
 
+<Diagram name="arch-restaurant-current" alt="Diagrama actual de la arquitectura del sistema" />
+
 #### Primer intento: Aplicación Android usando Expo
 
 Primero se intentó crear una aplicación para celulares Android usando el framework Expo, pero además de que debía ejecutarse en PHP un script que corriera el server Web Socket que mantuviera actualizada la app respecto a la base de datos tenía el peoblema de que debía usar HTTPS para la conexión, lo cual está bien pero me impedía avanzar dado que no era realista generar un certificado SSL específico para cada restaurant y esperar que la aplicación confiara en dicho certificado. Además al no poseer licencia de desarrollo de Apple no me es posible diseñar una opción sin descartar completamente los dispositivos iPhone.
 
-
-
+<Diagram name="arch-restaurant-old" alt="Diagrama antiguo" />
