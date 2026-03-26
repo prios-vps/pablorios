@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function T1({ children, className }: Props) {
-  const defaultClasses: string = "ncm10serif flex justify-start text-4xl font-bold not-italic";
+  const defaultClasses: string = "ncm10serif flex justify-start text-red-900 dark:text-red-700 title-shadow text-4xl uppercase font-bold not-italic";
   return <h1 className={ className || defaultClasses }>{ children }</h1>
 }
 

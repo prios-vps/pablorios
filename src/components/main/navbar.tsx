@@ -19,7 +19,7 @@ const navLinks = [
   ...(skills.length > 0
     ? [{ name: 'Competencias', href: '/skills' }]
     : []),
-  { name: 'Sobre mí', href: '/about' },
+  { name: 'Contacto', href: '/contact' },
 ];
 
 export default function NavBar () {
@@ -34,7 +34,7 @@ export default function NavBar () {
             <li key={link.name}>
               <Link 
                 href={link.href}
-                className={`whitespace-nowrap ${isActive ? 'text-gray-900 dark:text-gray-200 font-bold' : 'text-gray-600 dark:text-gray-400'}`}
+                className={`whitespace-nowrap uppercase text-lg font-bold ${isActive ? 'text-amber-900 dark:text-stone-200' : 'text-slate-600/50 dark:text-slate-400/75'}`}
               >
                 {link.name}
               </Link>

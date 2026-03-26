@@ -46,9 +46,9 @@ export default function RootLayout({ children }: Props) {
         className={`${ncm10Serif.variable} ${ncm08Serif.variable} ${ncm10Sans.variable} ${ncm08Sans.variable} ${ncm10Mono.variable} antialiased bg-gray-300 text-gray-900 dark:bg-gray-800 dark:text-gray-200`}
       >*/}
       <body
-        className={`antialiased bg-gray-300 text-gray-900 dark:bg-gray-800 dark:text-gray-200`}
+        className={`flex min-h-screen antialiased bg-stone-100 text-slate-900 dark:bg-black dark:text-stone-300 pf-text-shadow`}
       >
-        <main className="flex flex-col max-w-7xl mx-auto p-8">
+        <main className="flex flex-col grow-1 max-w-7xl mx-auto p-8">
           <Header />
           {children}
           <Footer />

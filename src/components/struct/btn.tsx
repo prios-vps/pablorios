@@ -1,4 +1,4 @@
-// 2026 © Pablo Ríos
+// © 2026 Pablo Ríos
 // Botón de propósito general
 // De este heredan los botones de proyectos y competencias
 
