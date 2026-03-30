@@ -11,7 +11,7 @@ export function toSlug(inputString: string): string {
   let slug = inputString.toLowerCase();
 
   for (const [key, value] of dictionary) {
-    slug.replace("/${key}/g", value);
+    slug.replace(`/${key}/g`, value);
   }
 
   return slug;

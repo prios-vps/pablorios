@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256mm"
+   height="256mm"
+   viewBox="0 0 256 256"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       id="path1"
+       style="stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
+       d="M 255,128 A 127,127 0 0 1 128,255 127,127 0 0 1 1,128 127,127 0 0 1 128,1 127,127 0 0 1 255,128 Z" />
+  </g>
+  <g
+     id="layer2">
+    <path
+       style="font-size:105.833px;font-family:'Droid Sans Mono Slashed for Powerline';-inkscape-font-specification:'Droid Sans Mono Slashed for Powerline';fill:#8f8989;fill-opacity:1;stroke-width:2.37404;stroke-linecap:round;stroke-linejoin:round"
+       d="m 192.82158,157.1835 32.71507,-28.08488 -32.71507,-28.08485 V 87.87464 l 42.29133,37.03588 v 8.3762 l -42.29133,37.03589 z"
+       id="path6" />
+    <path
+       style="font-size:105.833px;font-family:'Droid Sans Mono Slashed for Powerline';-inkscape-font-specification:'Droid Sans Mono Slashed for Powerline';fill:#8f8989;fill-opacity:1;stroke-width:2.37404;stroke-linecap:round;stroke-linejoin:round"
+       d="M 176.09749,68.412323 147.36873,188.47103 h -8.15587 L 167.94164,68.412323 Z"
+       id="path5" />
+    <path
+       id="path3"
+       style="font-size:105.833px;font-family:'Droid Sans Mono Slashed for Powerline';-inkscape-font-specification:'Droid Sans Mono Slashed for Powerline';fill:#dedcdc;stroke-width:2.80642;stroke-linecap:round;stroke-linejoin:round"
+       d="M 81.296899,68.412441 V 188.47118 H 93.20693 v -46.72627 h 12.22936 c 11.26919,0 19.84899,-3.36682 25.73969,-10.10062 5.93339,-6.7338 8.90045,-16.09511 8.90045,-28.08456 0,-23.431426 -10.97076,-35.147289 -32.91152,-35.147289 z m 11.910031,13.05679 h 12.86948 c 14.42798,0 21.64234,7.637461 21.64234,22.911689 0,8.37618 -1.83562,14.53481 -5.50665,18.47654 -3.62833,3.94174 -9.66831,5.91295 -18.12021,5.91295 H 93.20693 Z" />
+    <path
+       style="font-size:105.833px;font-family:'Droid Sans Mono Slashed for Powerline';-inkscape-font-specification:'Droid Sans Mono Slashed for Powerline';fill:#8f8989;fill-opacity:1;stroke-width:2.37404;stroke-linecap:round;stroke-linejoin:round"
+       d="M 66.176717,170.32261 23.885398,133.28672 v -8.3762 L 66.176717,87.87464 v 13.13913 l -32.760881,28.08485 32.760881,28.08488 z"
+       id="text1" />
+  </g>
+</svg>

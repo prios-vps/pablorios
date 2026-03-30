@@ -17,6 +17,6 @@ export default function Diagram({ name, alt, lang='es' }: Props) {
     setTheme(isDark ? 'dark' : 'light');
   }, [isDark])
 
-  return <img src={`/diagrams/${lang}/${theme}/${name}.svg`} alt={alt} />
+  return <img className='h-160 w-full object-scale-down' src={`/diagrams/${lang}/${theme}/${name}.svg`} alt={alt} />
 }
 

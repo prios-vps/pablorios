@@ -1,33 +1,30 @@
 // © 2026 Pablo Ríos
 // Entrada de formulario
-import { toSlug } from '@/lib/utils';
-
 interface Props {
-  name: string;
-  maxCols?: number;
+  fieldName: string;
+  displayName: string;
   inputType?: string;
   placeholder?: string;
+  colSpan?: boolean;
   requiredField?: boolean;
 }
 
-export default function FormInput({name, maxCols=2, inputType='text', placeholder='', requiredField=true}: Props) {
-  const slug = toSlug(name);
+export default function FormInput({fieldName, displayName, inputType='text', placeholder='', colSpan=false, requiredField=true}: Props) {
   const inputCommonClasses = 'flex dark:bg-neutral-900 border dark:border-stone-300 rounded-xs p-1';
   const optionalText = requiredField ? '' : ' (Opcional)';
-  let widthClasses = '';
+  let span = '';
 
-  if (maxCols > 1) widthClasses += ' md:w-1/2';
-  if (maxCols > 2) widthClasses += ' lg:w-1/3';
+  if (colSpan) span = ` md:col-span-full`;
 
   return (
-    <div className={`flex flex-col gap-1 w-full${widthClasses}`}>
-      <label htmlFor={slug} className='text-sm font-bold'>{`${name}${optionalText}`}</label>
+    <div className={`flex flex-col gap-1${span}`}>
+      <label htmlFor={fieldName} className='text-sm font-bold'>{`${displayName}${optionalText}`}</label>
       {
         inputType === 'textarea'
           ? (
-            <textarea id={slug} name={slug} className={`${inputCommonClasses} resize-none`} placeholder={placeholder} required={requiredField}></textarea>
+            <textarea id={fieldName} name={fieldName} className={`${inputCommonClasses} resize-none`} placeholder={placeholder} required={requiredField}></textarea>
           ) : (
-            <input id={slug} name={slug} className={`${inputCommonClasses}`} placeholder={placeholder} required={requiredField} />
+            <input id={fieldName} name={fieldName} type={inputType} className={`${inputCommonClasses}`} placeholder={placeholder} required={requiredField} />
           )
       }
     </div>

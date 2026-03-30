@@ -78,7 +78,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
       <section className="space-y-6">
         {renderedContent.map((content, index) => (
-          <article key={index} className="prose prose-invert max-w-none">
+          <article key={index} className='flex flex-col w-full'>
             { content }
           </article>
         ))}
