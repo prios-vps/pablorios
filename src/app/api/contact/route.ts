@@ -3,20 +3,14 @@ import { Resend } from 'resend';
 
 import type Message from '@/types/message';
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function POST(req: Request) {
   // FASE 1: Obtención de datos del formulario
-  try {
-    // Obtener el cuerpo de la solicitud POST, y luego
-    // obtener en un arreglo los datos del formulario
-    const body = await req.json();
-    const { name, company, email, phone, message }: Message = body;
-  } catch (error) {
-    return Response.json({
-      ok: false,
-      message: 'Problema al obtener los datos ¿Información incompleta?',
-      errorDump: error
-    }, { status: 500 });
-  }
+  // Obtener el cuerpo de la solicitud POST, y luego
+  // obtener en un arreglo los datos del formulario
+  const body = await req.json();
+  const { name, company, email, phone, message }: Message = body;
 
   // FASE 2: Creación de bjeto para almacenar los estados
   // de ambas solicitudes. Si fallan dependerá de cuáles
@@ -59,11 +53,11 @@ export async function POST(req: Request) {
 
     const connection = await mysql.createConnection(connectionParams);
 
-    const insertQuery = 'INSERT INTO inbox (name, company, mail, phone, message) VALUES (":name", ":company", ":mail", ":phone", ":message");';
+    const insertQuery = 'INSERT INTO inbox (name, company, mail, phone, message) VALUES (?, ?, ?, ?, ?);';
 
-    const values: object = { name, company, mail, phone, message };
+    const values: any[] = [ name, company, email, phone, message ];
 
-    const [results] = await connection.execute(insertQuery, values)
+    const [results] = await connection.execute(insertQuery, values);
 
     connection.end()
 

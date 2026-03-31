@@ -1,15 +1,20 @@
+import { FaAt, FaGithub, FaLinkedin } from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t pt-8">
-      <p>
-        Investigación matemática y académica:{" "}
-        <a
-          href="https://orcid.org/0009-0001-2449-3685"
-          className="text-blue-500 underline"
-        >
-          ORCID iD
-        </a>
-      </p>
+    <footer className="flex flex-row mt-20 border-t pt-8">
+      <a href="#">
+        <FaAt />
+        Correo: pablo_rios_p@protonmail.com
+      </a>
+      <a href="#">
+        <FaGithub />
+        Github: github.com/PabloRiosP
+      </a>
+      <a href="#">
+        <FaLinkedin />
+        Linkedin: 
+      </a>
     </footer>
   );
 }
